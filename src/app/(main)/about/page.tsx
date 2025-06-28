@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 // import Header from '../components/Header'; // No longer needed here
 import styles from './page.module.css';
 
@@ -12,13 +13,13 @@ const AboutPage = () => {
           </p>
         </div>
         <div className={styles.imageContainer}>
-          {/* <image
-          src="/about-portrait.jpg"
-          alt="A creative college portrait"
-          width={300}
-          height={375}
-          className={styles.image}
-          /> */}
+          <Image
+            src="/images/portrait.png" 
+            alt="that's me"
+            width={300}
+            height={375}
+            className={styles.image}
+          />
         </div>
       </section>
       <section className={styles.cardsContainer}>

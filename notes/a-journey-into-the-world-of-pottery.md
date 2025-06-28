@@ -1,5 +1,5 @@
 ---
-title: "A journey into the world of pottery"
+title: "Making a mini terraformer"
 date: "2024-05-10"
 tag: "Side Quest"
 ---

@@ -5,7 +5,6 @@ import styles from './page.module.css';
 const AboutPage = () => {
   return (
     <main className={styles.main}>
-      {/* <Header /> -- Removed from here, now in layout.tsx */}
       <section className={styles.aboutContent}>
         <div className={styles.textContainer}>
           <p>
@@ -13,7 +12,6 @@ const AboutPage = () => {
           </p>
         </div>
         <div className={styles.imageContainer}>
-          {/* This will be the image placeholder */}
         </div>
       </section>
       <section className={styles.cardsContainer}>

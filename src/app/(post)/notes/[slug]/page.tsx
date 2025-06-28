@@ -7,6 +7,12 @@ import Link from 'next/link';
 import styles from './page.module.css';
 import HummingbirdLogo from '@/app/components/HummingbirdLogo';
 
+type PageProps = {
+  params: {
+    slug: string;
+  };
+};
+
 const postsDirectory = path.join(process.cwd(), 'notes');
 
 // Generate the paths for all posts
@@ -34,7 +40,7 @@ async function getPostData(slug: string) {
   };
 }
 
-export default async function Post({ params }: { params: { slug: string } }) {
+export default async function Post({ params }: PageProps) {
   const postData = await getPostData(params.slug);
 
   return (

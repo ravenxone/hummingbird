@@ -12,6 +12,13 @@ const AboutPage = () => {
           </p>
         </div>
         <div className={styles.imageContainer}>
+          {/* <image
+          src="/about-portrait.jpg"
+          alt="A creative college portrait"
+          width={300}
+          height={375}
+          className={styles.image}
+          /> */}
         </div>
       </section>
       <section className={styles.cardsContainer}>

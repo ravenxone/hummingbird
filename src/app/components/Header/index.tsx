@@ -28,14 +28,14 @@ const Header = () => {
             <li key={href}>
               <Link href={href} className={pathname === href ? styles.activeLink : ''}>
                 {label}
+                {pathname === href && (
+                  <motion.div
+                    className={styles.underline}
+                    layoutId="underline"
+                    transition={{ type: 'spring', stiffness: 350, damping: 30 }}
+                  />
+                )}
               </Link>
-              {pathname === href && (
-                <motion.div
-                  className={styles.underline}
-                  layoutId="underline"
-                  transition={{ type: 'spring', stiffness: 350, damping: 30 }}
-                />
-              )}
             </li>
           ))}
         </ul>

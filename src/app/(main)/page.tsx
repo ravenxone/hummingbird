@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import styles from "./page.module.css";
-import BlogPost from "./components/BlogPost";
+import BlogPost from "../components/BlogPost";
 
 // Define a type for our post data
 type Post = {
@@ -42,12 +42,13 @@ export default function Home() {
   const posts = getPosts();
 
   return (
-    <main>
-      <section className={styles.content}>
+    <main className={styles.main}>
+      <div className={styles.content}>
         <div className={styles.blogList}>
           {posts.map((post) => (
             <BlogPost
               key={post.slug}
+              slug={post.slug}
               tag={post.tag}
               title={post.title}
               date={new Date(post.date).toLocaleDateString('en-US', {
@@ -58,7 +59,7 @@ export default function Home() {
             />
           ))}
         </div>
-      </section>
+      </div>
     </main>
   );
 }

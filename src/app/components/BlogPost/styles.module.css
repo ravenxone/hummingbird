@@ -3,7 +3,14 @@
     justify-content: space-between;
     align-items: center;
     padding: 0.5rem 0; /* Reduced padding */
-    border: none; /* Explicitly remove any border */
+    border-bottom: 1px solid transparent; /* Reserve space for hover underline */
+    text-decoration: none; /* Remove default link underline */
+    color: inherit; /* Ensure link text is black */
+    transition: border-color 0.2s ease-in-out;
+}
+
+.container:hover {
+    border-bottom-color: black; /* Show underline on hover */
 }
 
 .tags {

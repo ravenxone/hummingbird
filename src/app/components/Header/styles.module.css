@@ -30,6 +30,7 @@
 }
 
 .navigation a {
+    position: relative; /* Set the link as the positioning context */
     text-decoration: none; /* Removes the underline from links */
     color: inherit; /* Makes the links inherit the color from the body */
     font-size: 18px; /* Increased for better readability */
@@ -37,10 +38,11 @@
     padding-bottom: 3px;
 }
 
-
 .underline {
     position: absolute;
     bottom: -2px; /* Position it just below the links */
+    left: 0;
+    right: 0;
     height: 1px;
-    background-color: black;
+    background: black;
 } 

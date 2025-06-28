@@ -1,22 +1,27 @@
 import React from 'react';
+import Link from 'next/link';
 import styles from './styles.module.css';
 
 interface BlogPostProps {
   tag: string;
   title: string;
   date: string;
+  slug: string;
 }
 
 const tagColorMap: { [key: string]: string } = {
-  "Design": "#CDABFC",
-  "Finance": "#CBF592",
-  "Philosophy": "#8EC2F3",
-  "Side Quests": "#F38E8F",
+  Art: '#FFDDC1',
+  Technology: '#D4F1F4',
+  Life: '#C1FFD7',
+  Design: '#CDABFC',
+  Finance: '#CBF592',
+  Philosophy: '#8EC2F3',
+  'Side Quest': '#F38E8F',
 };
 
-const BlogPost: React.FC<BlogPostProps> = ({ tag, title, date }) => {
+const BlogPost = ({ tag, title, date, slug }: BlogPostProps) => {
   return (
-    <div className={styles.container}>
+    <Link href={`/notes/${slug}`} className={styles.container}>
       <div className={styles.tags}>
         <span
           className={styles.tag}
@@ -27,7 +32,7 @@ const BlogPost: React.FC<BlogPostProps> = ({ tag, title, date }) => {
       </div>
       <h2 className={styles.title}>{title}</h2>
       <p className={styles.date}>{date}</p>
-    </div>
+    </Link>
   );
 };
 

@@ -3,6 +3,10 @@
   This file contains styles specific to the main page (page.tsx).
 */
 
+.main {
+  padding-top: 10px; /* Add padding to push content below the fixed header */
+}
+
 .content {
     max-width: 800px;
     margin: 2rem auto; /* Centers the content and adds space */

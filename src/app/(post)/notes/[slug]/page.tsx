@@ -8,9 +8,9 @@ import styles from './page.module.css';
 import HummingbirdLogo from '@/app/components/HummingbirdLogo';
 
 type PageProps = {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 };
 
 const postsDirectory = path.join(process.cwd(), 'notes');
@@ -41,7 +41,8 @@ async function getPostData(slug: string) {
 }
 
 export default async function Post({ params }: PageProps) {
-  const postData = await getPostData(params.slug);
+  const { slug } = await params;
+  const postData = await getPostData(slug);
 
   return (
     <div className={styles.container}>

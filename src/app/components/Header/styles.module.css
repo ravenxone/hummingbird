@@ -1,0 +1,46 @@
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 288px; /* Set distance from top */
+}
+
+.logo {
+    margin-bottom: 0.5rem; /* Space between logo and nav */
+}
+
+.navigation {
+    position: relative; /* This is the correct container for the underline */
+}
+
+.navigation ul {
+    list-style: none;
+    display: flex;
+    gap: 0; /* Let the pseudo-element handle spacing */
+    padding: 0;
+    margin: 1rem 0 0 0;
+    align-items: center; /* Vertically align items */
+}
+
+.navigation li:not(:last-child)::after {
+    content: '|';
+    margin: 0 1.5rem; /* Space around the separator */
+    font-weight: 300;
+    font-size: 15px;
+}
+
+.navigation a {
+    text-decoration: none; /* Removes the underline from links */
+    color: inherit; /* Makes the links inherit the color from the body */
+    font-size: 18px; /* Increased for better readability */
+    font-weight: 300; /* From CSS */
+    padding-bottom: 3px;
+}
+
+
+.underline {
+    position: absolute;
+    bottom: -2px; /* Position it just below the links */
+    height: 1px;
+    background-color: black;
+} 

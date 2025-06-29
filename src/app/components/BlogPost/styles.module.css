@@ -18,13 +18,14 @@
     display: flex;
     justify-content: flex-start; /* Align tags to the left */
     gap: 0.5rem;
+    flex-wrap: wrap;
 }
 
 .tag {
     color: #000000; /* From CSS */
     padding: 0.2rem 0.75rem;
     border-radius: 8px; /* From CSS */
-    font-size: 14px; /* Updated size */
+    font-size: var(--font-size-small); /* Updated size */
     font-weight: 300; /* From CSS */
     text-align: center;
 }
@@ -34,7 +35,7 @@
     text-align: center;
     margin: 0;
     font-family: var(--font-serif); /* Use serif font */
-    font-size: 18px; /* Updated size */
+    font-size: var(--font-size-h3); /* Updated size */
     font-weight: 300;
     line-height: 1.4; /* Improved line height */
     
@@ -43,7 +44,29 @@
 .date {
     flex: 1;
     text-align: right;
-    font-size: 14px; /* Updated size */
+    font-size: var(--font-size-small); /* Updated size */
     font-weight: 300; /* Set specific weight */
     color: #000000; /* From CSS */
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+        padding: 1rem 0;
+    }
+    .title {
+        text-align: left;
+        flex: auto; /* Allow title to take its own width */
+        order: -1; /* Move title to the top */
+    }
+    .date {
+        text-align: left;
+        flex: auto;
+    }
+    .tags {
+        justify-content: flex-start;
+        flex: auto;
+    }
 } 

@@ -15,6 +15,13 @@
 :root {
   --font-serif: 'PP Editorial New', serif;
   --font-sans: 'Quicksand', sans-serif;
+
+  /* Fluid Typography - More conservative sizes */
+  --font-size-h1: clamp(2rem, 1.5rem + 2vw, 2.25rem);      /* 32px -> 36px */
+  --font-size-h2: clamp(1.5rem, 1.125rem + 1.5vw, 1.875rem);  /* 24px -> 30px */
+  --font-size-h3: clamp(1.25rem, 1rem + 1vw, 1.5rem);      /* 20px -> 24px */
+  --font-size-body: clamp(1rem, 0.95rem + 0.25vw, 1.125rem); /* 16px -> 18px */
+  --font-size-small: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem); /* 12px -> 14px */
 }
 
 body {
@@ -23,6 +30,7 @@ body {
     color: #000000;
     margin: 0;
     padding: 0;
+    font-size: var(--font-size-body);
 }
 
 body::after {
@@ -39,6 +47,7 @@ body::after {
 
 html {
     overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 /* 

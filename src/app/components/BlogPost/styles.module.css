@@ -51,22 +51,32 @@
 
 @media (max-width: 768px) {
     .container {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.5rem;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 0.5rem 1rem; /* row-gap column-gap */
         padding: 1rem 0;
-    }
-    .title {
-        text-align: left;
-        flex: auto; /* Allow title to take its own width */
-        order: -1; /* Move title to the top */
-    }
-    .date {
-        text-align: left;
-        flex: auto;
-    }
-    .tags {
         justify-content: flex-start;
-        flex: auto;
+    }
+    
+    .title {
+        flex: 1 1 100%; /* Take full width, force other items to next line */
+        text-align: left;
+        margin: 0;
+        margin-bottom: 0.25rem;
+        order: 1; /* Show first */
+    }
+    
+    .tags {
+        flex: 0 0 auto; /* Don't grow, just take needed space */
+        justify-content: flex-start;
+        order: 2; /* Show second */
+    }
+    
+    .date {
+        flex: 0 0 auto; /* Don't grow, just take needed space */
+        text-align: left;
+        margin: 0;
+        order: 3; /* Show third */
     }
 } 

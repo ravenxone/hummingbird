@@ -10,7 +10,7 @@ const AboutPage = () => {
         <div className={styles.textContainer}>
           <p>
             Namaste! 
-            <br/> I am Divyansh, a reader, engineer, and tinkerer. I write recipies, code, and notes on design & engineering. I am working on Stencil, to change how humans and AIs collaborate! Slide in <a href="https://x.com/divyaanshgoel"> @divyaanshgoel</a>
+            <br/> I am Divyansh, a reader, engineer, and tinkerer. I write recipies, code, and notes on design & engineering. I am working on Stencil, to explore how humans and AIs can collaborate! Slide in <a href="https://x.com/divyaanshgoel"> @divyaanshgoel</a>
             </p>
         </div>
         <div className={styles.imageContainer}>

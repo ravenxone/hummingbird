@@ -53,7 +53,7 @@
     .container {
         display: flex;
         flex-wrap: wrap;
-        align-items: center;
+        align-items: baseline; /* Align to baseline for better text alignment */
         gap: 0.5rem; /* Consistent gap */
         padding: 1rem 0;
         justify-content: space-between;
@@ -65,12 +65,19 @@
         margin: 0;
         order: 1; /* Show first */
         margin-right: 1rem; /* Space between title and tag */
+        line-height: 1.2; /* Consistent line height */
     }
     
     .tags {
         flex: 0 0 auto; /* Don't grow, just take needed space */
         justify-content: flex-end;
         order: 2; /* Show second, on same row as title */
+        align-items: baseline; /* Align tag to baseline */
+    }
+    
+    .tag {
+        line-height: 1.2; /* Match title line height */
+        vertical-align: baseline; /* Ensure proper vertical alignment */
     }
     
     .date {

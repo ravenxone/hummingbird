@@ -8,23 +8,29 @@
     margin: 0 auto;
     padding: 2rem;
     position: relative;
+    padding-top: 10px;
 }
 
 .aboutContent {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     padding: 0; /* Remove previous padding */
-    margin-top: 60px;
+    margin-top: 20px;
     align-items: flex-start;
+    text-align: center;
 }
 
 .textContainer {
     flex: 1;
     max-width: 569px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
 }
 
 .textContainer p {
-    font-family: var(--font-serif);
+    font-family: var(--font-sans);
     font-weight: 200;
     font-size: var(--font-size-h3);
     line-height: 1.6; /* Adjusted line height */
@@ -46,31 +52,222 @@
     object-fit: cover;
 }
 
-/* Container for the decorative cards */
+/* Container for the postcards */
 .cardsContainer {
     position: static;
 }
 
-.cardOrange {
+/* Base postcard styling - Standard postcard ratio 6:4 (1.5:1) */
+.postcard {
     position: absolute;
-    width: 432px;
-    height: 212px;
+    width: 360px; /* Standard postcard width */
+    height: 240px; /* Standard postcard height (6:4 ratio) */
+    padding: 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    
+    /* Authentic vintage postcard paper texture */
+    background: 
+        /* Fine paper grain */
+        radial-gradient(circle at 2px 3px, rgba(0,0,0,0.04) 1px, transparent 1px),
+        radial-gradient(circle at 6px 8px, rgba(0,0,0,0.04) 1px, transparent 1px),
+        /* Horizontal paper fibers */
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 1px,
+            rgba(0,0,0,0.03) 1px,
+            rgba(0,0,0,0.03) 2px
+        ),
+        /* Vertical paper fibers */
+        repeating-linear-gradient(
+            90deg,
+            transparent,
+            transparent 2px,
+            rgba(0,0,0,0.02) 2px,
+            rgba(0,0,0,0.02) 3px
+        ),
+        /* Aged spots and discoloration */
+        radial-gradient(ellipse at 30% 70%, rgba(139,125,108,0.15) 5%, transparent 25%),
+        radial-gradient(ellipse at 80% 20%, rgba(139,125,108,0.1) 8%, transparent 30%),
+        /* Base color */
+        var(--card-color);
+    background-size: 15px 20px, 20px 15px, 100% 100%, 100% 100%, 150px 150px, 200px 200px, 100% 100%;
+    
+    /* Realistic postcard shadows and depth */
+    box-shadow: 
+        /* Main depth shadow */
+        0 4px 20px rgba(0, 0, 0, 0.15),
+        /* Paper edge highlight */
+        0 1px 0 rgba(255, 255, 255, 0.4),
+        /* Subtle inner paper texture */
+        inset 0 0 0 1px rgba(255, 255, 255, 0.2),
+        /* Paper thickness */
+        0 0 0 1px rgba(0, 0, 0, 0.05);
+    
+    /* Vintage paper border */
+    border: 1px solid rgba(139, 125, 108, 0.2);
+}
+
+.postcard:hover {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 
+        0 12px 35px rgba(0, 0, 0, 0.25),
+        0 2px 0 rgba(255, 255, 255, 0.5),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.3),
+        0 0 0 1px rgba(0, 0, 0, 0.08);
+}
+
+.postcard:active {
+    transform: translateY(-3px) scale(1.01);
+    transition: all 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Orange Projects Card */
+.postcardOrange {
+    --card-color: #F1C695;
     left: 135px;
-    top: 620px; /* From Figma */
-    background: #F1C695;
-    z-index: -1;
+    top: 589px; /* Reduced by 5% from 620px */
 }
 
-.cardBlue {
-    position: absolute;
-    width: 432px;
-    height: 288px;
+/* Blue Hobbies Card */
+.postcardBlue {
+    --card-color: #95BBEF;
     left: 677px;
-    top: 723px; /* From Figma */
-    background: #95BBEF;
-    z-index: -1;
+    top: 687px; /* Reduced by 5% from 723px */
 }
 
+/* Postcard header with logo and title */
+.postcardHeader {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+/* Proper embossed logo - pressed INTO the paper */
+.embossedLogo {
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    /* TRUE embossed effect - pressed INTO the surface */
+    background: var(--card-color);
+    box-shadow: 
+        /* Inward depression shadow */
+        inset 2px 2px 4px rgba(0, 0, 0, 0.3),
+        inset -1px -1px 2px rgba(255, 255, 255, 0.1);
+    
+    /* Stamp-like border */
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    
+    color: rgba(0, 0, 0, 0.6);
+    transition: all 0.3s ease;
+}
+
+.postcard:hover .embossedLogo {
+    box-shadow: 
+        inset 3px 3px 6px rgba(0, 0, 0, 0.4),
+        inset -2px -2px 3px rgba(255, 255, 255, 0.15);
+    color: rgba(0, 0, 0, 0.7);
+}
+
+/* Embossed title - pressed into paper effect */
+.embossedTitle {
+    margin: 0;
+    font-family: var(--font-serif);
+    font-weight: 200;
+    font-size: 1.4rem;
+    color: rgba(0, 0, 0, 0.8);
+    
+    /* Pressed-in text effect using negative shadows */
+    text-shadow: 
+        -1px -1px 0 rgba(255, 255, 255, 0.3),
+        1px 1px 0 rgba(0, 0, 0, 0.4),
+        0 0 3px rgba(0, 0, 0, 0.2);
+    
+    transition: all 0.3s ease;
+}
+
+.postcard:hover .embossedTitle {
+    text-shadow: 
+        -1px -1px 0 rgba(255, 255, 255, 0.4),
+        1px 1px 0 rgba(0, 0, 0, 0.5),
+        0 0 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Content area */
+.postcardContent {
+    flex: 1;
+    margin-top: 4px;
+}
+
+/* Item list styling - replacing bullet lists */
+.itemList {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+/* Individual clickable items */
+.listItem {
+    font-family: var(--font-sans);
+    font-weight: 300;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    color: rgba(0, 0, 0, 0.75);
+    padding: 4px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.25s ease;
+    
+    /* Subtle embossed text */
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
+    
+    /* Invisible underline initially */
+    border-bottom: 1px solid transparent;
+}
+
+.listItem:hover {
+    color: rgba(0, 0, 0, 0.9);
+    background: rgba(255, 255, 255, 0.15);
+    
+    /* Embossed underline on hover */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    text-shadow: 
+        0 1px 0 rgba(255, 255, 255, 0.3),
+        0 -1px 0 rgba(0, 0, 0, 0.1);
+    
+    /* Slight inward press effect */
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+    transform: translateY(1px);
+}
+
+.listItem:active {
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15);
+    transform: translateY(2px);
+    transition: all 0.1s ease;
+}
+
+.hindi {
+  font-family: 'Tiro Devanagari', serif;
+  font-size: 1.2em;
+  color: #b36b00;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.serif {
+  font-family: var(--font-serif);
+}
+
+/* Responsive design */
 @media (max-width: 1024px) {
     .aboutContent {
         flex-direction: column;
@@ -80,7 +277,7 @@
         margin-top: 2rem;
     }
 
-    .cardOrange, .cardBlue {
+    .postcard {
         display: none;
     }
 }

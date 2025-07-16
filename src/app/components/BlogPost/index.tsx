@@ -10,12 +10,10 @@ interface BlogPostProps {
 }
 
 const tagColorMap: { [key: string]: string } = {
-  Art: '#FFDDC1',
   Technology: '#D4F1F4',
-  Life: '#C1FFD7',
   Design: '#CDABFC',
-  Finance: '#CBF592',
-  Philosophy: '#8EC2F3',
+  Money: '#CBF592',
+  Reflections: '#8EC2F3',
   'Side Quest': '#F38E8F',
 };
 

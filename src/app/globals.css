@@ -1,9 +1,5 @@
-/* 
-  Removed Google Fonts import for Playfair Display. 
-  We are now using a local font file for PP Editorial New.
-  Make sure you have copied the font files to the /public/fonts directory.
-*/
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tiro+Devanagari:ital,wght@0,400;1,400&display=swap');
 
 @font-face {
   font-family: 'PP Editorial New';

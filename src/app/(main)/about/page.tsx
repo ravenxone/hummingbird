@@ -47,7 +47,7 @@ const AboutPage = () => {
               Currently I am working on <a href='stencil.divyansh.io'>Stencil</a>. I don't have a good pitch for it yet. It's an app that helps me think better and work faster (I'll circle back once I have a solid articualtion of what it really is.)
               </p>
               <p>
-              <span style={{fontWeight:600}}>reaching out to me -</span> You can reach out to me at by socials below just holler at hello@divyansh.io
+              <span style={{fontWeight:600}}>reaching out to me -</span> You can reach out to me at by socials below or just holler at hello@divyansh.io
               </p>
             </div>
           <div style={{ marginTop: '1.5rem', display: 'flex', gap: '1.5rem', alignItems: 'center' }}>

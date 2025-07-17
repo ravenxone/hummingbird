@@ -25,6 +25,7 @@
     flex-direction: column;
     align-items: flex-start;
     text-align: left;
+    margin-top: 32px;
 }
 
 .textContainer p {
@@ -34,7 +35,6 @@
     line-height: 1.5; /* Adjusted line height */
     color: #000000;
     margin:0 0 18px;
-    
 }
 
 /* Item list styling - replacing bullet lists */
